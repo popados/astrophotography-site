@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Astrophotography Portfolio</title>
+  <link rel="stylesheet" href="stylesheet.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="#hero">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#blog">Blog</a>
+    <a href="#gear">Gear</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <header class="hero" id="hero">
+    <div class="overlay">
+      <h1>Celestial Visions</h1>
+      <p>Astrophotography by [Your Name]</p>
+    </div>
+  </header>
+
+  <!-- GALLERY SECTION -->
+  <section class="gallery-section fade-in-section" id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="images/deep1.jpg" alt="Nebula 1" loading="lazy">
+      <img src="images/deep2.jpg" alt="Nebula 2" loading="lazy">
+      <img src="images/milkyway1.jpg" alt="Milky Way" loading="lazy">
+      <img src="images/lunar1.jpg" alt="Moon Closeup" loading="lazy">
+      <img src="images/meteor1.jpg" alt="Meteor Shower" loading="lazy">
+      <img src="images/aurora1.jpg" alt="Aurora" loading="lazy">
+    </div>
+  </section>
+
+  <!-- BLOG SECTION -->
+  <section class="blog-section fade-in-section" id="blog">
+    <h2>Blog Posts</h2>
+    <div class="blog-posts">
+      <div class="post">
+        <h3>Chasing the Perseids</h3>
+        <p>A night under the stars tracking meteors across the Sierra Nevada skies...</p>
+        <a href="#">Read more →</a>
+      </div>
+      <div class="post">
+        <h3>How I Shot the Orion Nebula</h3>
+        <p>Tips, settings, and gear used to capture one of the most beautiful deep sky objects...</p>
+        <a href="#">Read more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEAR SECTION -->
+  <section class="gear-section fade-in-section" id="gear">
+    <h2>My Gear</h2>
+    <div class="gear-grid">
+      <div><strong>Camera:</strong> Canon R6, ZWO ASI533MC Pro</div>
+      <div><strong>Lenses:</strong> Samyang 14mm f/2.8, Canon 85mm f/1.8</div>
+      <div><strong>Telescope:</strong> William Optics RedCat 51</div>
+      <div><strong>Mount:</strong> Sky-Watcher EQ6-R Pro</div>
+      <div><strong>Filters:</strong> Optolong L-eNhance</div>
+      <div><strong>Software:</strong> PixInsight, Photoshop, NINA</div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about fade-in-section" id="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a nightscape photographer based in California. From Milky Way arches to deep space wonders,
+      I strive to capture the incredible beauty of the universe above us. This site is my digital observatory.
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Celestial Visions | contact@astroportfolio.com</p>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const sections = document.querySelectorAll('.fade-in-section');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+</html>
+
