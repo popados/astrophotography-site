@@ -38,30 +38,65 @@ body {
   .hero {
     position: relative;
     height: 100vh;
+    min-height: 500px;
     background: url('img/M51-\ Whirlpool\ Galaxy.jpeg') center/cover no-repeat fixed;
-    /* background-color: #0d0d0d; */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction: column;
-    gap: 16px;
+    color: #fff;
+    padding: 2rem;
   }
   
   .overlay {
     background-color: rgba(0, 0, 0, 0.6);
-    padding: 2rem;
+    padding: 2rem 3rem;
     border-radius: 10px;
-    gap:16px;
+    max-width: 90%;
   }
   
   .hero h1 {
     font-size: 4rem;
     margin: 0;
+    line-height: 1.2;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
   }
+  
   .hero p {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    font-weight: 400;
+  }
+  
+  /* Responsive scaling */
+  @media (max-width: 1024px) {
+    .hero h1 {
+      font-size: 3rem;
+    }
+  
+    .hero p {
+      font-size: 1.25rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      height: 80vh;
+      padding: 1rem;
+    }
+  
+    .hero h1 {
+      font-size: 2.25rem;
+    }
+  
+    .hero p {
+      font-size: 1rem;
+    }
+  
+    .overlay {
+      padding: 1.5rem;
+    }
   }
   
   section h2 {
@@ -170,10 +205,9 @@ body {
     margin-top: 2rem;
     color: #4ea1f3;
   }
-  
   .mosaic-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     grid-auto-flow: dense;
     gap: 10px;
     padding: 0 2rem;
@@ -186,6 +220,7 @@ body {
     border-radius: 8px;
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.9;
+    aspect-ratio: 1 / 1;
   }
   
   .mosaic-gallery img:hover {
@@ -193,24 +228,47 @@ body {
     opacity: 1;
   }
   
-  /* Sizing modifiers for mosaic effect */
+  /* Image shape modifiers */
   .mosaic-gallery img.wide {
     grid-column: span 2;
+    aspect-ratio: 2 / 1;
   }
   
   .mosaic-gallery img.tall {
     grid-row: span 2;
+    aspect-ratio: 1 / 2;
   }
   
   .mosaic-gallery img.big {
     grid-column: span 2;
     grid-row: span 2;
+    aspect-ratio: 2 / 2;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
+  /* Responsive Overrides */
+  @media (max-width: 1024px) {
+    .mosaic-gallery img.wide {
+      grid-column: span 1;
+      aspect-ratio: 1 / 1;
+    }
+  
+    .mosaic-gallery img.tall {
+      grid-row: span 1;
+      aspect-ratio: 1 / 1;
+    }
+  
+    .mosaic-gallery img.big {
+      grid-column: span 1;
+      grid-row: span 1;
+      aspect-ratio: 1 / 1;
+    }
+  }
+  
+  @media (max-width: 600px) {
     .mosaic-gallery {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 6px;
+      padding: 0 1rem;
     }
   }
   
