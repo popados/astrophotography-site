@@ -51,6 +51,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 2rem;
     border-radius: 10px;
+    gap:16px;
   }
   
   .hero h1 {
@@ -183,6 +184,7 @@ body {
   }
   
   @media (max-width: 768px) {
+    body{display: flex;flex-direction: column;}
     .gallery-grid {
       grid-template-columns: 1fr;
     }
