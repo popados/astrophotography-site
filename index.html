@@ -20,41 +20,42 @@
 
   <header class="hero" id="hero">
     <div class="overlay">
-      <h1>Celestial Visions</h1>
-      <p>Astrophotography by [Your Name]</p>
+      <h1>Yuniforge Photos</h1>
     </div>
+    <p>Astrophotography by Sunil Khandwala</p>
+    
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section fade-in-section" id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-grid">
+        <img src="images/deep1.jpg" alt="Nebula 1" loading="lazy">
+        <img src="images/deep2.jpg" alt="Nebula 2" loading="lazy">
+        <img src="images/milkyway1.jpg" alt="Milky Way" loading="lazy">
+        <img src="images/lunar1.jpg" alt="Moon Closeup" loading="lazy">
+        <img src="images/meteor1.jpg" alt="Meteor Shower" loading="lazy">
+        <img src="images/aurora1.jpg" alt="Aurora" loading="lazy">
+      </div>
+    </section>
   </header>
-
-  <!-- GALLERY SECTION -->
-  <section class="gallery-section fade-in-section" id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery-grid">
-      <img src="images/deep1.jpg" alt="Nebula 1" loading="lazy">
-      <img src="images/deep2.jpg" alt="Nebula 2" loading="lazy">
-      <img src="images/milkyway1.jpg" alt="Milky Way" loading="lazy">
-      <img src="images/lunar1.jpg" alt="Moon Closeup" loading="lazy">
-      <img src="images/meteor1.jpg" alt="Meteor Shower" loading="lazy">
-      <img src="images/aurora1.jpg" alt="Aurora" loading="lazy">
-    </div>
-  </section>
-
   <!-- BLOG SECTION -->
   <section class="blog-section fade-in-section" id="blog">
     <h2>Blog Posts</h2>
     <div class="blog-posts">
       <div class="post">
-        <h3>Chasing the Perseids</h3>
-        <p>A night under the stars tracking meteors across the Sierra Nevada skies...</p>
-        <a href="#">Read more →</a>
+        <h3><a href="#" data-post="perisoids">Chasing the Perseids</a></h3>
+        <p>A night under the stars tracking meteors across the Sierra Nevada...</p>
       </div>
       <div class="post">
-        <h3>How I Shot the Orion Nebula</h3>
-        <p>Tips, settings, and gear used to capture one of the most beautiful deep sky objects...</p>
-        <a href="#">Read more →</a>
+        <h3><a href="#" data-post="orion">How I Shot the Orion Nebula</a></h3>
+        <p>Tips, settings, and gear used to capture M42 with my RedCat 51...</p>
       </div>
     </div>
+  
+    <div id="blog-content" class="blog-content"></div>
   </section>
-
+  
+  
+  
   <!-- GEAR SECTION -->
   <section class="gear-section fade-in-section" id="gear">
     <h2>My Gear</h2>
@@ -67,7 +68,7 @@
       <div><strong>Software:</strong> PixInsight, Photoshop, NINA</div>
     </div>
   </section>
-
+  
   <!-- ABOUT SECTION -->
   <section class="about fade-in-section" id="about">
     <h2>About Me</h2>
@@ -76,11 +77,12 @@
       I strive to capture the incredible beauty of the universe above us. This site is my digital observatory.
     </p>
   </section>
-
+  
   <footer>
     <p>&copy; 2025 Celestial Visions | contact@astroportfolio.com</p>
   </footer>
-
+  
+  <script src="blog.js"></script>
   <script>
     // Fade-in on scroll
     const sections = document.querySelectorAll('.fade-in-section');
@@ -91,11 +93,11 @@
         }
       });
     }, { threshold: 0.1 });
-
+    
     sections.forEach(section => {
       observer.observe(section);
     });
-  </script>
+    </script>
 
 </body>
 </html>
